@@ -17,7 +17,7 @@ regressor.fit(X, y)
 Level= 6.5
 print('\n Estimated Posotion Salary :', regressor.predict([[Level]])[0])
 
-# Visualising the Decision Tree Regression results (higher resolution)
+# Visualising the results
 X_grid = np.arange(min(X), max(X), 0.001)
 X_grid = X_grid.reshape((len(X_grid), 1))
 plt.scatter(X, y, color = 'red')
