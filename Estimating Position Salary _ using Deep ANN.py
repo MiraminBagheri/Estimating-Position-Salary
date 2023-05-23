@@ -72,13 +72,13 @@ ann.load_weights('Weights.h1')
 Level= 6.5
 print('\n Estimated Position Salary :', sc_y.inverse_transform(ann.predict(sc_X.transform([[Level]])).reshape(-1, 1))[0][0])
 
-# Visualising the SVR results
+# Visualising results
 X_grid = np.arange(min(sc_X.inverse_transform(X)), max(sc_X.inverse_transform(X)), 0.01)
 X_grid = X_grid.reshape((len(X_grid), 1))
 plt.scatter(sc_X.inverse_transform(X), sc_y.inverse_transform(y), color = 'red')
 plt.scatter([Level], sc_y.inverse_transform(ann.predict(sc_X.transform([[Level]])).reshape(-1, 1)), color='green', s=200, marker='*') # this has been added to show the single prediction result
 plt.plot(X_grid, sc_y.inverse_transform(ann.predict(sc_X.transform(X_grid)).reshape(-1, 1)), color = 'blue')
-plt.title('Estimated Salary (XGBoost)')
+plt.title('Estimated Salary (Deep ANN)')
 plt.xlabel('Position level')
 plt.ylabel('Salary')
 plt.show()
