@@ -30,7 +30,7 @@ regressor.fit(X, y)
 Level= 6.5
 print('\n Estimated Position Salary :', sc_y.inverse_transform(regressor.predict(sc_X.transform([[Level]])).reshape(-1, 1))[0][0])
 
-# Visualising the Decision Tree Regression results 
+# Visualising the results 
 X_grid = np.arange(min(sc_X.inverse_transform(X)), max(sc_X.inverse_transform(X)), 0.001)
 X_grid = X_grid.reshape((len(X_grid), 1))
 plt.scatter(sc_X.inverse_transform(X), sc_y.inverse_transform(y), color = 'red')
